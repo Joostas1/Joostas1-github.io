@@ -4,809 +4,2014 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>The Complete History of the NHL</title>
+<meta name="theme-color" content="#07111f">
+<title>NHL History Museum | 1917–2026</title>
 
 <style>
+:root {
+  --background: #07111f;
+  --surface: #101e32;
+  --surface2: #172941;
+  --gold: #e9bd62;
+  --blue: #2778c7;
+  --white: #f1f5fc;
+  --muted: #a5b5ca;
+  --border: #30445e;
+}
+
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    scroll-behavior: smooth;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-    font-family: Arial, sans-serif;
-    background: #101820;
-    color: white;
-    line-height: 1.7;
+  margin: 0;
+  background: var(--background);
+  color: var(--white);
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.65;
 }
 
-header {
-    background: linear-gradient(135deg, #001f3f, #c8102e);
-    text-align: center;
-    padding: 65px 20px;
+a {
+  color: inherit;
+  text-decoration: none;
 }
 
-header h1 {
-    font-size: 45px;
-    margin-bottom: 10px;
-}
-
-header p {
-    font-size: 19px;
-}
-
-nav {
-    background: #050b12;
-    padding: 15px;
-    text-align: center;
-    position: sticky;
-    top: 0;
-    z-index: 10;
-}
-
-nav a {
-    color: white;
-    text-decoration: none;
-    margin: 8px 12px;
-    display: inline-block;
-    font-weight: bold;
-}
-
-nav a:hover {
-    color: #e63946;
-}
-
-main {
-    max-width: 1100px;
-    margin: auto;
-    padding: 25px;
-}
-
-section {
-    background: #1c2935;
-    margin: 25px 0;
-    padding: 30px;
-    border-radius: 12px;
-    border-left: 5px solid #c8102e;
-}
-
-h2 {
-    color: #ff4757;
-    margin-bottom: 15px;
-    font-size: 27px;
-}
-
-h3 {
-    color: #f1c40f;
-    margin: 18px 0 8px;
-}
-
-p {
-    margin-bottom: 12px;
-}
-
-ul {
-    padding-left: 25px;
-}
-
-li {
-    margin-bottom: 7px;
-}
-
-.timeline {
-    border-left: 3px solid #e63946;
-    padding-left: 20px;
-    margin: 20px 0;
-}
-
-.event {
-    margin-bottom: 25px;
-}
-
-.year {
-    color: #f1c40f;
-    font-size: 22px;
-    font-weight: bold;
-}
-
-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 15px;
-}
-
-th, td {
-    border: 1px solid #52616b;
-    padding: 10px;
-    text-align: left;
-}
-
-th {
-    background: #c8102e;
-}
-
-tr:nth-child(even) {
-    background: #263746;
-}
-
-.highlight {
-    color: #f1c40f;
-    font-weight: bold;
-}
-
-footer {
-    background: #050b12;
-    padding: 30px;
-    text-align: center;
-    margin-top: 40px;
+button,
+input {
+  font: inherit;
 }
 
 button {
-    background: #c8102e;
-    color: white;
-    border: none;
-    padding: 12px 22px;
-    border-radius: 6px;
-    cursor: pointer;
-    margin-top: 10px;
+  cursor: pointer;
 }
 
-button:hover {
-    background: #e63946;
+.hero {
+  min-height: 390px;
+  padding: 65px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background:
+    radial-gradient(circle at 50% 0%, #275c91 0%, transparent 55%),
+    linear-gradient(145deg, #07111f, #142c49);
+  border-bottom: 3px solid var(--gold);
 }
 
-@media(max-width: 600px) {
-    header h1 {
-        font-size: 32px;
-    }
+.hero-content {
+  max-width: 850px;
+}
 
-    section {
-        padding: 20px;
-    }
+.hero h1 {
+  font-size: clamp(42px, 8vw, 78px);
+  line-height: 1.1;
+  margin: 15px 0;
+  letter-spacing: 3px;
+}
 
-    table {
-        font-size: 13px;
-    }
+.hero h1 span {
+  color: var(--gold);
+}
+
+.hero p {
+  color: #c3d4e9;
+  font-size: 18px;
+}
+
+.eyebrow {
+  color: var(--gold);
+  font-weight: bold;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+}
+
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: #0c192a;
+  border-bottom: 1px solid var(--border);
+}
+
+.nav-inner {
+  max-width: 1150px;
+  margin: auto;
+  padding: 12px 18px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.logo {
+  color: var(--gold);
+  font-size: 19px;
+  font-weight: bold;
+}
+
+.nav-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.nav-links a {
+  color: var(--muted);
+  font-size: 13px;
+  font-weight: bold;
+}
+
+.nav-links a:hover {
+  color: var(--gold);
+}
+
+.container {
+  width: min(1050px, 92%);
+  margin: 35px auto;
+}
+
+.section {
+  margin: 55px 0;
+  scroll-margin-top: 90px;
+}
+
+.section-title {
+  color: var(--gold);
+  font-size: 28px;
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 12px;
+}
+
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 22px;
+  margin: 15px 0;
+}
+
+.card h3 {
+  color: var(--gold);
+  margin-top: 0;
+}
+
+.card p {
+  color: var(--muted);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 15px;
+}
+
+.stat {
+  background: var(--surface2);
+  border: 1px solid var(--border);
+  padding: 20px;
+  text-align: center;
+  border-radius: 10px;
+}
+
+.stat strong {
+  display: block;
+  font-size: 32px;
+  color: var(--gold);
+}
+
+.stat span {
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.timeline {
+  border-left: 3px solid var(--gold);
+  padding-left: 20px;
+  margin-left: 10px;
+}
+
+.timeline-item {
+  position: relative;
+  background: var(--surface);
+  padding: 18px;
+  margin: 20px 0;
+  border-radius: 9px;
+  border: 1px solid var(--border);
+}
+
+.timeline-item::before {
+  content: "";
+  position: absolute;
+  left: -28px;
+  top: 24px;
+  width: 12px;
+  height: 12px;
+  background: var(--gold);
+  border-radius: 50%;
+}
+
+.timeline-item h3 {
+  color: var(--gold);
+  margin: 0 0 8px;
+}
+
+details {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  margin: 12px 0;
+}
+
+summary {
+  padding: 16px;
+  color: var(--gold);
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.details-content {
+  padding: 0 20px 20px;
+  color: var(--muted);
+}
+
+.search {
+  width: 100%;
+  background: #0e1b2d;
+  color: white;
+  padding: 14px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  margin: 12px 0;
+}
+
+.button {
+  display: inline-block;
+  padding: 11px 17px;
+  background: var(--blue);
+  border: none;
+  border-radius: 7px;
+  color: white;
+  font-weight: bold;
+}
+
+.button:hover {
+  background: #398cdd;
+}
+
+.gold {
+  color: var(--gold);
+}
+
+.muted {
+  color: var(--muted);
+}
+
+footer {
+  text-align: center;
+  background: #0c192a;
+  border-top: 1px solid var(--border);
+  padding: 35px 15px;
+  color: var(--muted);
+}
+
+@media (max-width: 600px) {
+  .nav-inner {
+    justify-content: center;
+  }
+
+  .nav-links {
+    justify-content: center;
+    gap: 12px;
+  }
+
+  .hero {
+    min-height: 310px;
+  }
+
+  .section-title {
+    font-size: 23px;
+  }
 }
 </style>
 </head>
 
 <body>
 
-<header>
-    <h1>THE HISTORY OF THE NHL</h1>
-    <p>Over 100 Years of Hockey History (1917–2026)</p>
-    <p>Tradition • Rivalries • Legends • Stanley Cups</p>
+<header class="hero" id="home">
+  <div class="hero-content">
+    <div class="eyebrow">The Ultimate Hockey Archive</div>
+    <h1>THE <span>NHL</span><br>HISTORY MUSEUM</h1>
+    <p>
+      From the first puck drop in 1917 to the modern
+      superstars of 2026.
+    </p>
+    <a class="button" href="#history">EXPLORE HISTORY</a>
+  </div>
 </header>
 
-<nav>
-    <a href="#beginning">Beginning</a>
-    <a href="#early">Early NHL</a>
-    <a href="#original">Original Six</a>
-    <a href="#expansion">Expansion</a>
-    <a href="#modern">Modern NHL</a>
-    <a href="#players">Players</a>
-    <a href="#teams">Teams</a>
-    <a href="#cups">Stanley Cup</a>
+<nav class="navbar">
+  <div class="nav-inner">
+    <a href="#home" class="logo">🏒 NHL MUSEUM</a>
+    <div class="nav-links">
+      <a href="#history">HISTORY</a>
+      <a href="#timeline">TIMELINE</a>
+      <a href="#original-six">ORIGINAL SIX</a>
+      <a href="#eras">ERAS</a>
+      <a href="#legends">LEGENDS</a>
+    </div>
+  </div>
 </nav>
 
-<main>
+<main class="container">
 
-<section id="beginning">
-<h2>1. The Beginning of the NHL (1917)</h2>
-
-<p>
-The National Hockey League, also known as the NHL,
-was officially founded on November 26, 1917,
-in Montreal, Quebec, Canada.
-</p>
-
-<p>
-The NHL was created after disagreements within
-the National Hockey Association (NHA).
-The original meeting involved representatives
-from Montreal, Ottawa and Quebec.
-</p>
-
-<p>
-The league officially began playing games
-on December 19, 1917.
-</p>
-
-<h3>The Original Founding Clubs</h3>
-
-<ul>
-<li>Montreal Canadiens</li>
-<li>Montreal Wanderers</li>
-<li>Ottawa Senators</li>
-<li>Quebec Bulldogs</li>
-</ul>
-
-<p>
-The Toronto Arenas were added as a fifth club.
-The Quebec Bulldogs did not operate during
-the first season, so four teams actually played.
-</p>
+<section class="section">
+  <div class="card">
+    <div class="eyebrow">Welcome to the archive</div>
+    <h2 class="gold">More Than a Century of Hockey</h2>
+    <p>
+      The National Hockey League is one of the most
+      historic professional sports leagues in the world.
+      Its history is filled with legendary players,
+      unforgettable rivalries, championship dynasties
+      and moments that changed the sport forever.
+    </p>
+    <p>
+      This museum explores the teams, players and events
+      that made the NHL what it is today.
+    </p>
+  </div>
 </section>
 
-<section id="early">
-<h2>2. The Early Years (1918–1942)</h2>
+<section class="section" id="history">
+  <h2 class="section-title">🏆 NHL At A Glance</h2>
 
-<p>
-During the early years, professional hockey
-was very different from today's game.
-The league had fewer teams, smaller arenas,
-different equipment and fewer rules.
-</p>
+  <div class="grid">
+    <div class="stat">
+      <strong>1917</strong>
+      <span>League founded</span>
+    </div>
 
-<div class="timeline">
+    <div class="stat">
+      <strong>32</strong>
+      <span>Current teams</span>
+    </div>
 
-<div class="event">
-<div class="year">1918</div>
-<p>
-The Montreal Wanderers stopped playing after
-their arena was destroyed by fire.
-</p>
-</div>
+    <div class="stat">
+      <strong>24</strong>
+      <span>Montreal Canadiens NHL-era Cups</span>
+    </div>
 
-<div class="event">
-<div class="year">1919</div>
-<p>
-The Stanley Cup Final between Montreal
-and Seattle was abandoned during the
-influenza pandemic.
-</p>
-</div>
-
-<div class="event">
-<div class="year">1924</div>
-<p>
-The Boston Bruins became the NHL's first
-American-based team.
-</p>
-</div>
-
-<div class="event">
-<div class="year">1926</div>
-<p>
-The New York Rangers, Chicago Black Hawks
-and Detroit Cougars joined the NHL.
-</p>
-</div>
-
-<div class="event">
-<div class="year">1927</div>
-<p>
-The NHL took control of the Stanley Cup
-competition.
-</p>
-</div>
-
-<div class="event">
-<div class="year">1933</div>
-<p>
-The NHL held its first All-Star benefit game
-in honour of injured player Ace Bailey.
-</p>
-</div>
-
-<div class="event">
-<div class="year">1937</div>
-<p>
-The Detroit franchise became known as
-the Detroit Red Wings.
-</p>
-</div>
-
-<div class="event">
-<div class="year">1942</div>
-<p>
-The Brooklyn Americans stopped playing.
-The league was reduced to six teams.
-</p>
-</div>
-
-</div>
+    <div class="stat">
+      <strong>100+</strong>
+      <span>Years of hockey history</span>
+    </div>
+  </div>
 </section>
 
-<section id="original">
-<h2>3. The Original Six Era (1942–1967)</h2>
+<section class="section" id="timeline">
+  <h2 class="section-title">📜 The NHL Historical Timeline</h2>
 
-<p>
-The Original Six era lasted 25 seasons.
-Only six teams competed in the NHL during
-this period.
-</p>
+  <div class="timeline">
 
-<h3>The Six Original Six Teams</h3>
+    <div class="timeline-item">
+      <h3>1917 – The Birth of the NHL</h3>
+      <p>
+        The National Hockey League is founded in Montreal
+        on November 26, 1917. The league begins with
+        four founding clubs.
+      </p>
+    </div>
 
-<ul>
-<li>Boston Bruins</li>
-<li>Chicago Black Hawks</li>
-<li>Detroit Red Wings</li>
-<li>Montreal Canadiens</li>
-<li>New York Rangers</li>
-<li>Toronto Maple Leafs</li>
-</ul>
+    <div class="timeline-item">
+      <h3>1918 – The First NHL Champion</h3>
+      <p>
+        Toronto Arenas win the first Stanley Cup
+        championship awarded during NHL competition.
+      </p>
+    </div>
 
-<p>
-This period helped establish some of hockey's
-greatest rivalries and most famous players.
-The Montreal Canadiens and Toronto Maple Leafs
-were especially successful.
-</p>
+    <div class="timeline-item">
+      <h3>1924 – The Boston Bruins Arrive</h3>
+      <p>
+        Boston becomes the first American-based
+        NHL franchise.
+      </p>
+    </div>
 
-<h3>Important Developments</h3>
+    <div class="timeline-item">
+      <h3>1926 – The League Expands</h3>
+      <p>
+        The New York Rangers, Chicago Black Hawks
+        and Detroit Cougars join the NHL.
+      </p>
+    </div>
 
-<ul>
-<li>Television broadcasts helped hockey reach more fans.</li>
-<li>The NHL developed its award and trophy system.</li>
-<li>The Hockey Hall of Fame opened in 1961.</li>
-<li>Scouting and player development became more organized.</li>
-<li>The Stanley Cup playoffs became a major sporting event.</li>
-</ul>
+    <div class="timeline-item">
+      <h3>1942 – The Original Six Era</h3>
+      <p>
+        The league enters its famous six-team period,
+        which lasts until the 1967 expansion.
+      </p>
+    </div>
+
+    <div class="timeline-item">
+      <h3>1950s – Montreal's Great Dynasty</h3>
+      <p>
+        The Canadiens become the dominant force
+        in hockey, winning five consecutive Cups
+        from 1956 through 1960.
+      </p>
+    </div>
+
+    <div class="timeline-item">
+      <h3>1967 – A Massive Expansion</h3>
+      <p>
+        The NHL doubles in size from six to twelve
+        franchises.
+      </p>
+    </div>
+
+    <div class="timeline-item">
+      <h3>1970s – The Broad Street Bullies</h3>
+      <p>
+        Philadelphia wins consecutive championships
+        in 1974 and 1975.
+      </p>
+    </div>
+
+    <div class="timeline-item">
+      <h3>1980s – Gretzky Changes Everything</h3>
+      <p>
+        Wayne Gretzky transforms offensive hockey
+        and leads Edmonton to multiple championships.
+      </p>
+    </div>
+
+    <div class="timeline-item">
+      <h3>1990s – The NHL Goes Global</h3>
+      <p>
+        More international talent enters the league.
+        Superstars like Mario Lemieux, Jaromir Jagr
+        and Dominik Hasek define the decade.
+      </p>
+    </div>
+
+    <div class="timeline-item">
+      <h3>2004–2005 – The Lockout</h3>
+      <p>
+        A labour dispute results in the cancellation
+        of the entire 2004–05 NHL season.
+      </p>
+    </div>
+
+    <div class="timeline-item">
+      <h3>2010s – The Modern Dynasties</h3>
+      <p>
+        Chicago, Los Angeles and Pittsburgh
+        establish championship-winning teams.
+      </p>
+    </div>
+
+    <div class="timeline-item">
+      <h3>2020s – A New Generation</h3>
+      <p>
+        Connor McDavid, Nathan MacKinnon and other
+        stars lead the modern NHL.
+      </p>
+    </div>
+
+  </div>
 </section>
 
-<section id="expansion">
-<h2>4. NHL Expansion (1967–1990)</h2>
+<section class="section" id="original-six">
+  <h2 class="section-title">⭐ The Original Six</h2>
 
-<p>
-In 1967, the NHL doubled in size from
-six teams to twelve teams.
-This was one of the biggest changes
-in professional hockey history.
-</p>
+  <p class="muted">
+    Six historic franchises competed in every NHL
+    season from 1942–43 through 1966–67.
+  </p>
 
-<h3>The Six Expansion Teams of 1967</h3>
+  <div class="grid">
 
-<ul>
-<li>California Seals</li>
-<li>Los Angeles Kings</li>
-<li>Minnesota North Stars</li>
-<li>Philadelphia Flyers</li>
-<li>Pittsburgh Penguins</li>
-<li>St. Louis Blues</li>
-</ul>
+    <div class="card">
+      <h3>🐻 Boston Bruins</h3>
+      <p>
+        Founded in 1924, the Bruins became the first
+        American NHL franchise.
+      </p>
+      <p>Legends: Bobby Orr, Ray Bourque, Phil Esposito.</p>
+    </div>
 
-<h3>Major Expansion Years</h3>
+    <div class="card">
+      <h3>🖤 Chicago Blackhawks</h3>
+      <p>
+        Established in 1926, Chicago became one
+        of hockey's iconic original franchises.
+      </p>
+      <p>Legends: Bobby Hull, Stan Mikita, Patrick Kane.</p>
+    </div>
 
-<div class="timeline">
+    <div class="card">
+      <h3>🔴 Detroit Red Wings</h3>
+      <p>
+        Founded in 1926, Detroit earned the nickname
+        Hockeytown.
+      </p>
+      <p>Legends: Gordie Howe, Steve Yzerman, Nicklas Lidstrom.</p>
+    </div>
 
-<div class="event">
-<div class="year">1970</div>
-<p>
-Buffalo Sabres and Vancouver Canucks joined.
-</p>
-</div>
+    <div class="card">
+      <h3>🔵 Montreal Canadiens</h3>
+      <p>
+        Founded in 1909, Montreal joined the NHL
+        in its inaugural season.
+      </p>
+      <p>Legends: Maurice Richard, Jean Beliveau, Guy Lafleur.</p>
+    </div>
 
-<div class="event">
-<div class="year">1972</div>
-<p>
-The World Hockey Association (WHA) was founded,
-creating competition for NHL players.
-</p>
-</div>
+    <div class="card">
+      <h3>🗽 New York Rangers</h3>
+      <p>
+        Established in 1926, the Rangers became
+        a major part of New York sports history.
+      </p>
+      <p>Legends: Mark Messier, Brian Leetch, Henrik Lundqvist.</p>
+    </div>
 
-<div class="event">
-<div class="year">1974</div>
-<p>
-Washington Capitals and Kansas City Scouts joined.
-</p>
-</div>
+    <div class="card">
+      <h3>🍁 Toronto Maple Leafs</h3>
+      <p>
+        Toronto's NHL history began with the Arenas
+        before the Maple Leafs name was adopted in 1927.
+      </p>
+      <p>Legends: Syl Apps, Dave Keon, Mats Sundin.</p>
+    </div>
 
-<div class="event">
-<div class="year">1976</div>
-<p>
-The California franchise moved to Cleveland
-and became the Cleveland Barons.
-</p>
-</div>
-
-<div class="event">
-<div class="year">1979</div>
-<p>
-Four WHA teams joined the NHL:
-Edmonton Oilers, Hartford Whalers,
-Quebec Nordiques and Winnipeg Jets.
-</p>
-</div>
-
-<div class="event">
-<div class="year">1980</div>
-<p>
-The Atlanta Flames moved to Calgary
-and became the Calgary Flames.
-</p>
-</div>
-
-<div class="event">
-<div class="year">1982</div>
-<p>
-The Colorado Rockies moved to New Jersey
-and became the New Jersey Devils.
-</p>
-</div>
-
-</div>
+  </div>
 </section>
 
-<section>
-<h2>5. The NHL During the 1990s</h2>
+<section class="section" id="eras">
+  <h2 class="section-title">🕰️ Explore the Hockey Eras</h2>
 
-<p>
-The 1990s brought major changes to the NHL.
-New teams joined, older franchises relocated,
-and the league expanded across North America.
-</p>
+  <details>
+    <summary>1917–1929: The Early NHL</summary>
+    <div class="details-content">
+      The league begins with a small group of
+      Canadian franchises before expanding into
+      major American cities.
+    </div>
+  </details>
 
-<ul>
-<li><b>1991:</b> San Jose Sharks joined.</li>
-<li><b>1992:</b> Ottawa Senators and Tampa Bay Lightning joined.</li>
-<li><b>1993:</b> Florida Panthers and Mighty Ducks of Anaheim joined.</li>
-<li><b>1993:</b> Minnesota North Stars relocated to Dallas.</li>
-<li><b>1995:</b> Quebec Nordiques relocated to Denver and became the Colorado Avalanche.</li>
-<li><b>1996:</b> Winnipeg Jets relocated to Phoenix.</li>
-<li><b>1997:</b> Hartford Whalers relocated to North Carolina and became the Carolina Hurricanes.</li>
-<li><b>1998:</b> Nashville Predators joined.</li>
-<li><b>1999:</b> Atlanta Thrashers joined.</li>
-</ul>
+  <details>
+    <summary>1930–1949: The Original Stars</summary>
+    <div class="details-content">
+      Maurice Richard, Gordie Howe and other
+      early legends help define the sport.
+    </div>
+  </details>
 
-<p>
-By the end of the decade, the NHL was
-approaching 30 teams.
-</p>
+  <details>
+    <summary>1950–1967: The Original Six</summary>
+    <div class="details-content">
+      A 25-season period of six-team competition
+      and some of the greatest dynasties ever.
+    </div>
+  </details>
+
+  <details>
+    <summary>1967–1979: The Expansion Years</summary>
+    <div class="details-content">
+      New franchises transform the league,
+      and the Canadiens and Flyers lead the way.
+    </div>
+  </details>
+
+  <details>
+    <summary>1980–1989: The Gretzky Era</summary>
+    <div class="details-content">
+      The Islanders and Oilers become historic
+      championship dynasties.
+    </div>
+  </details>
+
+  <details>
+    <summary>1990–1999: The Global NHL</summary>
+    <div class="details-content">
+      International players and new franchises
+      transform professional hockey.
+    </div>
+  </details>
+
+  <details>
+    <summary>2000–2009: The New Millennium</summary>
+    <div class="details-content">
+      A new generation of players arrives,
+      including Sidney Crosby and Alexander Ovechkin.
+    </div>
+  </details>
+
+  <details>
+    <summary>2010–2019: Modern Championship Hockey</summary>
+    <div class="details-content">
+      Chicago, Pittsburgh and Los Angeles
+      become championship powers.
+    </div>
+  </details>
+
+  <details>
+    <summary>2020–2026: Today's NHL</summary>
+    <div class="details-content">
+      The league enters a new era of incredible
+      speed, skill and international competition.
+    </div>
+  </details>
 </section>
 
-<section id="modern">
-<h2>6. The Modern NHL (2000–2026)</h2>
+<section class="section" id="legends">
+  <h2 class="section-title">👑 Hockey Legends</h2>
 
-<div class="timeline">
+  <div class="grid">
+    <div class="card">
+      <h3>Wayne Gretzky</h3>
+      <p>Career NHL points: 2,857.</p>
+      <p>The Great One holds the NHL's all-time scoring record.</p>
+    </div>
 
-<div class="event">
-<div class="year">2000</div>
-<p>
-Columbus Blue Jackets and Minnesota Wild joined.
-The NHL reached 30 teams.
-</p>
-</div>
+    <div class="card">
+      <h3>Gordie Howe</h3>
+      <p>Nickname: Mr. Hockey.</p>
+      <p>One of the most complete players in hockey history.</p>
+    </div>
 
-<div class="event">
-<div class="year">2003</div>
-<p>
-The first modern NHL regular-season outdoor game
-was played in Edmonton. It was called
-the Heritage Classic.
-</p>
-</div>
+    <div class="card">
+      <h3>Mario Lemieux</h3>
+      <p>Two-time Stanley Cup champion as a player.</p>
+      <p>One of the most gifted offensive players ever.</p>
+    </div>
 
-<div class="event">
-<div class="year">2004–2005</div>
-<p>
-A labour dispute caused the cancellation
-of the entire NHL season.
-</p>
-</div>
+    <div class="card">
+      <h3>Bobby Orr</h3>
+      <p>Eight-time Norris Trophy winner.</p>
+      <p>Changed how defensemen played hockey.</p>
+    </div>
 
-<div class="event">
-<div class="year">2008</div>
-<p>
-The first Winter Classic was played
-between Buffalo and Pittsburgh.
-</p>
-</div>
+    <div class="card">
+      <h3>Sidney Crosby</h3>
+      <p>Three-time Stanley Cup champion.</p>
+      <p>One of the defining players of the 21st century.</p>
+    </div>
 
-<div class="event">
-<div class="year">2011</div>
-<p>
-The Atlanta Thrashers moved to Winnipeg
-and became the second Winnipeg Jets franchise.
-</p>
-</div>
-
-<div class="event">
-<div class="year">2013</div>
-<p>
-Another lockout shortened the NHL season
-to 48 games.
-</p>
-</div>
-
-<div class="event">
-<div class="year">2017</div>
-<p>
-The Vegas Golden Knights joined the league.
-</p>
-</div>
-
-<div class="event">
-<div class="year">2020</div>
-<p>
-The COVID-19 pandemic interrupted the season.
-The NHL later completed a modified playoff format.
-</p>
-</div>
-
-<div class="event">
-<div class="year">2021</div>
-<p>
-The Seattle Kraken joined the NHL,
-bringing the league to 32 teams.
-</p>
-</div>
-
-<div class="event">
-<div class="year">2024</div>
-<p>
-Utah received an NHL franchise through
-the transfer of the Arizona Coyotes'
-hockey operations and roster.
-</p>
-</div>
-
-<div class="event">
-<div class="year">2025–2026</div>
-<p>
-The Utah franchise became the Utah Mammoth.
-The NHL continued competing with 32 teams.
-</p>
-</div>
-
-</div>
-</section>
-
-<section id="players">
-<h2>7. Some of the Greatest NHL Players</h2>
-
-<p>
-Throughout its history, the NHL has featured
-some of the greatest hockey players ever.
-</p>
-
-<h3>Legendary Players</h3>
-
-<ul>
-<li>Wayne Gretzky – Famous for his incredible scoring records.</li>
-<li>Gordie Howe – Known as Mr. Hockey.</li>
-<li>Mario Lemieux – One of hockey's greatest offensive players.</li>
-<li>Bobby Orr – Changed the way defensemen played hockey.</li>
-<li>Maurice Richard – Montreal Canadiens legend.</li>
-<li>Jean Beliveau – Legendary Canadiens captain.</li>
-<li>Mark Messier – Famous for leadership and championships.</li>
-<li>Jaromir Jagr – One of the NHL's all-time leading scorers.</li>
-<li>Sidney Crosby – Pittsburgh Penguins superstar.</li>
-<li>Alex Ovechkin – One of the greatest goal scorers.</li>
-<li>Connor McDavid – One of the leading players of the modern era.</li>
-</ul>
-
-<h3>Legendary Goaltenders</h3>
-
-<ul>
-<li>Patrick Roy</li>
-<li>Martin Brodeur</li>
-<li>Dominik Hasek</li>
-<li>Jacques Plante</li>
-<li>Glenn Hall</li>
-<li>Henrik Lundqvist</li>
-<li>Carey Price</li>
-<li>Marc-Andre Fleury</li>
-</ul>
-</section>
-
-<section>
-<h2>8. Famous NHL Rivalries</h2>
-
-<ul>
-<li>Montreal Canadiens vs Toronto Maple Leafs</li>
-<li>Boston Bruins vs Montreal Canadiens</li>
-<li>Edmonton Oilers vs Calgary Flames</li>
-<li>Chicago Blackhawks vs Detroit Red Wings</li>
-<li>Pittsburgh Penguins vs Washington Capitals</li>
-<li>New York Rangers vs New York Islanders</li>
-<li>Los Angeles Kings vs Anaheim Ducks</li>
-<li>Philadelphia Flyers vs Pittsburgh Penguins</li>
-</ul>
-
-<p>
-Rivalries have helped make the NHL exciting
-for generations of fans.
-</p>
-</section>
-
-<section id="cups">
-<h2>9. The Stanley Cup</h2>
-
-<p>
-The Stanley Cup is the championship trophy
-awarded to the NHL playoff champion.
-It is one of the oldest and most recognizable
-trophies in professional sports.
-</p>
-
-<p>
-The trophy was donated by Lord Stanley
-of Preston in 1892 and first awarded
-in 1893.
-</p>
-
-<h3>Important Stanley Cup Facts</h3>
-
-<ul>
-<li>The Montreal Canadiens have won the most Stanley Cups in NHL history, with 24 championships.</li>
-<li>The Toronto Maple Leafs last won in 1967.</li>
-<li>The Edmonton Oilers won five championships during the 1980s.</li>
-<li>The Pittsburgh Penguins became a major championship team in the modern era.</li>
-<li>The Vegas Golden Knights won their first Stanley Cup in 2023.</li>
-<li>The Florida Panthers won their first Stanley Cup in 2024.</li>
-</ul>
-
-</section>
-
-<section id="teams">
-<h2>10. All 32 Current NHL Teams</h2>
-
-<p>
-The NHL currently has 32 franchises
-organized into two conferences.
-</p>
-
-<h3>Eastern Conference</h3>
-
-<h3>Atlantic Division</h3>
-<ul>
-<li>Boston Bruins</li>
-<li>Buffalo Sabres</li>
-<li>Detroit Red Wings</li>
-<li>Florida Panthers</li>
-<li>Montreal Canadiens</li>
-<li>Ottawa Senators</li>
-<li>Tampa Bay Lightning</li>
-<li>Toronto Maple Leafs</li>
-</ul>
-
-<h3>Metropolitan Division</h3>
-<ul>
-<li>Carolina Hurricanes</li>
-<li>Columbus Blue Jackets</li>
-<li>New Jersey Devils</li>
-<li>New York Islanders</li>
-<li>New York Rangers</li>
-<li>Philadelphia Flyers</li>
-<li>Pittsburgh Penguins</li>
-<li>Washington Capitals</li>
-</ul>
-
-<h3>Western Conference</h3>
-
-<h3>Central Division</h3>
-<ul>
-<li>Chicago Blackhawks</li>
-<li>Colorado Avalanche</li>
-<li>Dallas Stars</li>
-<li>Minnesota Wild</li>
-<li>Nashville Predators</li>
-<li>St. Louis Blues</li>
-<li>Utah Mammoth</li>
-<li>Winnipeg Jets</li>
-</ul>
-
-<h3>Pacific Division</h3>
-<ul>
-<li>Anaheim Ducks</li>
-<li>Calgary Flames</li>
-<li>Edmonton Oilers</li>
-<li>Los Angeles Kings</li>
-<li>San Jose Sharks</li>
-<li>Seattle Kraken</li>
-<li>Vancouver Canucks</li>
-<li>Vegas Golden Knights</li>
-</ul>
-</section>
-
-<section>
-<h2>11. How the NHL Has Changed</h2>
-
-<table>
-<tr>
-<th>Category</th>
-<th>Early NHL</th>
-<th>Modern NHL</th>
-</tr>
-<tr>
-<td>Teams</td>
-<td>4 playing teams in 1917</td>
-<td>32 teams</td>
-</tr>
-<tr>
-<td>Equipment</td>
-<td>Basic protective equipment</td>
-<td>Advanced protective equipment</td>
-</tr>
-<tr>
-<td>Goalie Masks</td>
-<td>Not commonly used</td>
-<td>Required protective gear</td>
-</tr>
-<tr>
-<td>Television</td>
-<td>No regular TV broadcasts</td>
-<td>Worldwide broadcasts</td>
-</tr>
-<tr>
-<td>Travel</td>
-<td>Mostly regional</td>
-<td>Across North America and beyond</td>
-</tr>
-<tr>
-<td>Game Speed</td>
-<td>Slower playing style</td>
-<td>Faster modern game</td>
-</tr>
-</table>
-</section>
-
-<section>
-<h2>12. Conclusion</h2>
-
-<p>
-The National Hockey League has grown tremendously
-since its founding in 1917.
-</p>
-
-<p>
-What started as a small Canadian professional
-hockey league has become one of the world's
-most recognized sports leagues.
-</p>
-
-<p>
-From the Original Six to modern superstars,
-the NHL has created unforgettable moments,
-historic rivalries and legendary championships.
-</p>
-
-<p class="highlight">
-The history of the NHL is more than 100 years
-of hockey, competition, dedication and tradition.
-</p>
-</section>
-
-<section>
-<h2>13. Historical Sources</h2>
-
-<ul>
-<li>
-<a href="https://www.nhl.com/history/a-brief-history-of-the-league"
-target="_blank" style="color:#f1c40f;">
-Official NHL History
-</a>
-</li>
-<li>
-<a href="https://records.nhl.com/history"
-target="_blank" style="color:#f1c40f;">
-NHL Historical Records
-</a>
-</li>
-<li>
-<a href="https://www.nhl.com/"
-target="_blank" style="color:#f1c40f;">
-Official NHL Website
-</a>
-</li>
-</ul>
+    <div class="card">
+      <h3>Connor McDavid</h3>
+      <p>Multiple-time scoring champion.</p>
+      <p>Known for his incredible speed and offensive skill.</p>
+    </div>
+  </div>
 </section>
 
 </main>
 
 <footer>
-<h2>THE HISTORY OF THE NHL</h2>
-<p>1917 – 2026</p>
-<p>A celebration of hockey history and tradition.</p>
-<p>&copy; 2026 NHL History Project</p>
-<button onclick="window.scrollTo({top:0, behavior:'smooth'})">
-Back to Top
-</button>
+  <h3 class="gold">THE NHL HISTORY MUSEUM</h3>
+  <p>1917 – 2026 | A Celebration of Hockey</p>
+  <p>Part 1 of 3</p>
 </footer>
 
 </body>
 </html>
+
+<!-- ===================================== -->
+<!--       THE NHL HISTORY ARCHIVES      -->
+<!-- ===================================== -->
+
+<style>
+.archive-card {
+  background: #101e32;
+  border: 1px solid #30445e;
+  border-radius: 12px;
+  padding: 20px;
+  margin: 16px 0;
+}
+
+.archive-card h3 {
+  color: #e9bd62;
+}
+
+.archive-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(220px,1fr));
+  gap: 14px;
+}
+
+.archive-stat {
+  background: #172941;
+  padding: 16px;
+  border-radius: 9px;
+  border-left: 3px solid #e9bd62;
+}
+
+.archive-stat strong {
+  color: #e9bd62;
+}
+
+.archive-list {
+  padding-left: 22px;
+}
+
+.archive-list li {
+  margin: 9px 0;
+}
+
+.archive-search {
+  width: 100%;
+  padding: 14px;
+  background: #0e1b2d;
+  color: white;
+  border: 1px solid #30445e;
+  border-radius: 8px;
+  margin: 12px 0;
+}
+
+.archive-entry {
+  background: #172941;
+  border-left: 3px solid #e9bd62;
+  padding: 12px;
+  margin: 8px 0;
+  border-radius: 7px;
+}
+
+.archive-year {
+  color: #e9bd62;
+  font-weight: bold;
+}
+
+.archive-note {
+  color: #a5b5ca;
+  font-size: 13px;
+}
+
+.archive-section {
+  margin: 55px 0;
+  scroll-margin-top: 90px;
+}
+
+.archive-section h2 {
+  color: #e9bd62;
+  border-bottom: 1px solid #30445e;
+  padding-bottom: 12px;
+}
+
+.archive-card details {
+  margin-top: 12px;
+}
+</style>
+
+<!-- STANLEY CUP ARCHIVE -->
+
+<section class="archive-section" id="cup-archive">
+
+<h2>🏆 THE STANLEY CUP CHAMPIONSHIP ARCHIVE</h2>
+
+<div class="archive-card">
+<p>
+The Stanley Cup is the oldest trophy competed for
+by professional athletes in North America.
+It was donated by Lord Stanley in 1892.
+</p>
+
+<p>
+The archive below includes NHL-era championship
+seasons, plus the historical 1919 cancellation.
+</p>
+</div>
+
+<input
+class="archive-search"
+id="cupSearch"
+type="search"
+placeholder="Search a champion or year..."
+aria-label="Search championship archive"
+>
+
+<div id="cupResults"></div>
+<p id="cupCount" class="archive-note"></p>
+
+</section>
+
+<!-- DECADE SUPERSTARS -->
+
+<section class="archive-section" id="superstars">
+
+<h2>👑 THE SUPERSTARS OF EVERY DECADE</h2>
+
+<div class="archive-card">
+<h3>1920s — Howie Morenz</h3>
+<p>
+The Montreal Canadiens legend became one of
+the NHL's first major attractions.
+His speed and offensive ability made him
+a household name among hockey fans.
+</p>
+</div>
+
+<div class="archive-card">
+<h3>1930s — Eddie Shore</h3>
+<p>
+A legendary Boston Bruins defenseman.
+Shore was famous for his physical play,
+competitive attitude and defensive excellence.
+</p>
+</div>
+
+<div class="archive-card">
+<h3>1940s — Maurice Richard</h3>
+<p>
+Known as The Rocket, Richard became the first
+player to score 50 goals in 50 games.
+He became a symbol of Montreal hockey.
+</p>
+</div>
+
+<div class="archive-card">
+<h3>1950s — Gordie Howe</h3>
+<p>
+Mr. Hockey was an incredibly complete player.
+He combined scoring, toughness and longevity
+in a way few players have ever matched.
+</p>
+</div>
+
+<div class="archive-card">
+<h3>1960s — Bobby Orr</h3>
+<p>
+Orr transformed the defense position.
+His skating, passing and offensive instincts
+changed how hockey teams used defensemen.
+</p>
+</div>
+
+<div class="archive-card">
+<h3>1970s — Guy Lafleur</h3>
+<p>
+The Flower became one of the most exciting
+offensive players of the decade.
+His speed and scoring helped Montreal
+dominate the late 1970s.
+</p>
+</div>
+
+<div class="archive-card">
+<h3>1980s — Wayne Gretzky</h3>
+<p>
+The Great One dominated scoring records.
+He recorded 200 points in a season four times
+and led Edmonton's historic dynasty.
+</p>
+</div>
+
+<div class="archive-card">
+<h3>1990s — Mario Lemieux</h3>
+<p>
+Super Mario was a phenomenal scorer.
+His combination of size, hands and vision
+made him one of hockey's greatest talents.
+</p>
+</div>
+
+<div class="archive-card">
+<h3>2000s — Sidney Crosby</h3>
+<p>
+Crosby arrived in 2005 and quickly became
+one of the league's most important players.
+He won the Stanley Cup in 2009.
+</p>
+</div>
+
+<div class="archive-card">
+<h3>2010s — Sidney Crosby</h3>
+<p>
+Crosby led Pittsburgh to three championships
+and became one of the defining players
+of the modern NHL.
+</p>
+</div>
+
+<div class="archive-card">
+<h3>2020s — Connor McDavid</h3>
+<p>
+McDavid's skating, creativity and scoring
+have made him one of the most electrifying
+players of his generation.
+</p>
+</div>
+
+<p class="archive-note">
+These are editorial selections representing
+each era, not official NHL decade awards.
+</p>
+
+</section>
+
+<!-- LEGENDARY DYNASTIES -->
+
+<section class="archive-section" id="dynasties">
+
+<h2>🔥 THE GREATEST NHL DYNASTIES</h2>
+
+<div class="archive-card">
+<h3>🔵 Montreal Canadiens — 1956–1960</h3>
+<p><strong>Five consecutive Stanley Cups.</strong></p>
+<ul class="archive-list">
+<li>1956 Stanley Cup</li>
+<li>1957 Stanley Cup</li>
+<li>1958 Stanley Cup</li>
+<li>1959 Stanley Cup</li>
+<li>1960 Stanley Cup</li>
+</ul>
+<p>
+Legends: Jean Beliveau, Maurice Richard,
+Henri Richard and Doug Harvey.
+</p>
+</div>
+
+<div class="archive-card">
+<h3>🔵 Montreal Canadiens — 1976–1979</h3>
+<p><strong>Four consecutive Stanley Cups.</strong></p>
+<ul class="archive-list">
+<li>1976 Stanley Cup</li>
+<li>1977 Stanley Cup</li>
+<li>1978 Stanley Cup</li>
+<li>1979 Stanley Cup</li>
+</ul>
+<p>
+Legends: Guy Lafleur, Ken Dryden,
+Larry Robinson and Serge Savard.
+</p>
+</div>
+
+<div class="archive-card">
+<h3>🗽 New York Islanders — 1980–1983</h3>
+<p><strong>Four consecutive Stanley Cups.</strong></p>
+<ul class="archive-list">
+<li>1980 Stanley Cup</li>
+<li>1981 Stanley Cup</li>
+<li>1982 Stanley Cup</li>
+<li>1983 Stanley Cup</li>
+</ul>
+<p>
+Legends: Mike Bossy, Bryan Trottier,
+Denis Potvin and Billy Smith.
+</p>
+</div>
+
+<div class="archive-card">
+<h3>🛢️ Edmonton Oilers — 1984–1990</h3>
+<p><strong>Five Stanley Cups in seven seasons.</strong></p>
+<ul class="archive-list">
+<li>1984 Stanley Cup</li>
+<li>1985 Stanley Cup</li>
+<li>1987 Stanley Cup</li>
+<li>1988 Stanley Cup</li>
+<li>1990 Stanley Cup</li>
+</ul>
+<p>
+Legends: Wayne Gretzky, Mark Messier,
+Jari Kurri, Paul Coffey and Grant Fuhr.
+</p>
+</div>
+
+<div class="archive-card">
+<h3>🐧 Pittsburgh Penguins — 1991–1992</h3>
+<p><strong>Back-to-back Stanley Cups.</strong></p>
+<p>
+Mario Lemieux, Jaromir Jagr and Ron Francis
+powered the Penguins to consecutive championships.
+</p>
+</div>
+
+<div class="archive-card">
+<h3>🐧 Pittsburgh Penguins — 2016–2017</h3>
+<p><strong>Back-to-back Stanley Cups.</strong></p>
+<p>
+Sidney Crosby, Evgeni Malkin and Kris Letang
+led Pittsburgh to consecutive titles.
+</p>
+</div>
+
+<div class="archive-card">
+<h3>🖤 Chicago Blackhawks — 2010–2015</h3>
+<p><strong>Three Stanley Cups in six seasons.</strong></p>
+<p>
+Jonathan Toews, Patrick Kane and Duncan Keith
+were central to Chicago's modern dynasty.
+</p>
+</div>
+
+</section>
+
+<!-- HISTORIC RIVALRIES -->
+
+<section class="archive-section" id="rivalries">
+
+<h2>⚔️ THE GREATEST NHL RIVALRIES</h2>
+
+<div class="archive-grid">
+
+<div class="archive-card">
+<h3>🍁 Toronto vs. Montreal</h3>
+<p>
+One of hockey's oldest rivalries.
+Two historic Canadian franchises with
+generations of passionate supporters.
+</p>
+</div>
+
+<div class="archive-card">
+<h3>🐻 Boston vs. Montreal</h3>
+<p>
+A fierce Original Six rivalry featuring
+decades of playoff battles and memorable
+physical contests.
+</p>
+</div>
+
+<div class="archive-card">
+<h3>🛢️ Edmonton vs. Calgary</h3>
+<p>
+The Battle of Alberta brings together
+two passionate hockey cities.
+The rivalry reached another level
+during the 1980s.
+</p>
+</div>
+
+<div class="archive-card">
+<h3>🗽 Rangers vs. Islanders</h3>
+<p>
+The Battle of New York is a rivalry
+between two teams sharing the same
+metropolitan hockey market.
+</p>
+</div>
+
+<div class="archive-card">
+<h3>🐧 Pittsburgh vs. Philadelphia</h3>
+<p>
+The Pennsylvania rivalry features
+two fan bases known for their passion
+and competitive intensity.
+</p>
+</div>
+
+<div class="archive-card">
+<h3>🔴 Detroit vs. Colorado</h3>
+<p>
+One of the defining rivalries of the 1990s,
+featuring intense playoff battles
+and legendary players.
+</p>
+</div>
+
+</div>
+</section>
+
+<!-- HISTORIC MOMENTS -->
+
+<section class="archive-section" id="moments">
+
+<h2>💥 UNFORGETTABLE NHL MOMENTS</h2>
+
+<div class="archive-card">
+<h3>1955 — The Richard Riot</h3>
+<p>
+Maurice Richard's suspension sparked
+major unrest in Montreal.
+The event became a significant moment
+in Quebec's sporting and cultural history.
+</p>
+</div>
+
+<div class="archive-card">
+<h3>1972 — The Summit Series</h3>
+<p>
+Canada faced the Soviet Union in an
+eight-game series that became one of
+the most important international hockey
+events ever played.
+</p>
+</div>
+
+<div class="archive-card">
+<h3>1980 — The Miracle on Ice</h3>
+<p>
+The United States Olympic team defeated
+the Soviet Union in a historic upset
+at the Winter Olympics.
+</p>
+</div>
+
+<div class="archive-card">
+<h3>1988 — Gretzky Leaves Edmonton</h3>
+<p>
+Wayne Gretzky was traded to the Los Angeles
+Kings in one of the most famous trades
+in sports history.
+</p>
+</div>
+
+<div class="archive-card">
+<h3>1994 — Rangers End the Drought</h3>
+<p>
+The New York Rangers captured the Stanley Cup,
+ending a championship drought that stretched
+back to 1940.
+</p>
+</div>
+
+<div class="archive-card">
+<h3>2010 — The Golden Goal</h3>
+<p>
+Sidney Crosby scored the overtime winner
+against the United States to give Canada
+Olympic gold in Vancouver.
+</p>
+</div>
+
+<div class="archive-card">
+<h3>2019 — St. Louis Wins Its First Cup</h3>
+<p>
+The Blues captured their first Stanley Cup
+after decades of waiting.
+</p>
+</div>
+
+<div class="archive-card">
+<h3>2024 — Florida's First Championship</h3>
+<p>
+The Florida Panthers won their first
+Stanley Cup after reaching the Final
+in consecutive seasons.
+</p>
+</div>
+
+</section>
+
+<!-- CHAMPIONSHIP SEARCH JAVASCRIPT -->
+
+<script>
+(function () {
+"use strict";
+
+const cupData = `
+1918|Toronto Arenas
+1919|Final abandoned - no champion
+1920|Ottawa Senators
+1921|Ottawa Senators
+1922|Toronto St. Pats
+1923|Ottawa Senators
+1924|Montreal Canadiens
+1925|Victoria Cougars
+1926|Montreal Maroons
+1927|Ottawa Senators
+1928|New York Rangers
+1929|Boston Bruins
+1930|Montreal Canadiens
+1931|Montreal Canadiens
+1932|Toronto Maple Leafs
+1933|New York Rangers
+1934|Chicago Black Hawks
+1935|Montreal Maroons
+1936|Detroit Red Wings
+1937|Detroit Red Wings
+1938|Chicago Black Hawks
+1939|Boston Bruins
+1940|New York Rangers
+1941|Boston Bruins
+1942|Toronto Maple Leafs
+1943|Detroit Red Wings
+1944|Montreal Canadiens
+1945|Toronto Maple Leafs
+1946|Montreal Canadiens
+1947|Toronto Maple Leafs
+1948|Toronto Maple Leafs
+1949|Toronto Maple Leafs
+1950|Detroit Red Wings
+1951|Toronto Maple Leafs
+1952|Detroit Red Wings
+1953|Montreal Canadiens
+1954|Detroit Red Wings
+1955|Detroit Red Wings
+1956|Montreal Canadiens
+1957|Montreal Canadiens
+1958|Montreal Canadiens
+1959|Montreal Canadiens
+1960|Montreal Canadiens
+1961|Chicago Black Hawks
+1962|Toronto Maple Leafs
+1963|Toronto Maple Leafs
+1964|Toronto Maple Leafs
+1965|Montreal Canadiens
+1966|Montreal Canadiens
+1967|Toronto Maple Leafs
+1968|Montreal Canadiens
+1969|Montreal Canadiens
+1970|Boston Bruins
+1971|Montreal Canadiens
+1972|Boston Bruins
+1973|Montreal Canadiens
+1974|Philadelphia Flyers
+1975|Philadelphia Flyers
+1976|Montreal Canadiens
+1977|Montreal Canadiens
+1978|Montreal Canadiens
+1979|Montreal Canadiens
+1980|New York Islanders
+1981|New York Islanders
+1982|New York Islanders
+1983|New York Islanders
+1984|Edmonton Oilers
+1985|Edmonton Oilers
+1986|Montreal Canadiens
+1987|Edmonton Oilers
+1988|Edmonton Oilers
+1989|Calgary Flames
+1990|Edmonton Oilers
+1991|Pittsburgh Penguins
+1992|Pittsburgh Penguins
+1993|Montreal Canadiens
+1994|New York Rangers
+1995|New Jersey Devils
+1996|Colorado Avalanche
+1997|Detroit Red Wings
+1998|Detroit Red Wings
+1999|Dallas Stars
+2000|New Jersey Devils
+2001|Colorado Avalanche
+2002|Detroit Red Wings
+2003|New Jersey Devils
+2004|Tampa Bay Lightning
+2005|Cancelled - lockout
+2006|Carolina Hurricanes
+2007|Anaheim Ducks
+2008|Detroit Red Wings
+2009|Pittsburgh Penguins
+2010|Chicago Blackhawks
+2011|Boston Bruins
+2012|Los Angeles Kings
+2013|Chicago Blackhawks
+2014|Los Angeles Kings
+2015|Chicago Blackhawks
+2016|Pittsburgh Penguins
+2017|Pittsburgh Penguins
+2018|Washington Capitals
+2019|St. Louis Blues
+2020|Tampa Bay Lightning
+2021|Tampa Bay Lightning
+2022|Colorado Avalanche
+2023|Vegas Golden Knights
+2024|Florida Panthers
+2025|Florida Panthers
+2026|Carolina Hurricanes
+`.trim();
+
+const results = document.getElementById("cupResults");
+const search = document.getElementById("cupSearch");
+const count = document.getElementById("cupCount");
+
+if (results && search && count) {
+  const records = cupData.split("\n").map(line => {
+    const [year, team] = line.split("|");
+    return { year, team };
+  });
+
+  function renderCupRecords() {
+    const query = search.value.toLowerCase().trim();
+
+    const filtered = records.filter(record =>
+      record.year.includes(query) ||
+      record.team.toLowerCase().includes(query)
+    );
+
+    results.innerHTML = filtered.map(record => `
+      <div class="archive-entry">
+        <span class="archive-year">${record.year}</span>
+        <br>
+        🏆 ${record.team}
+      </div>
+    `).join("");
+
+    count.textContent =
+      "Showing " + filtered.length +
+      " of " + records.length + " records.";
+  }
+
+  search.addEventListener("input", renderCupRecords);
+  renderCupRecords();
+}
+})();
+</script>
+
+
+<!-- ======================================= -->
+<!-- PART 3: THE ULTIMATE NHL COLLECTION     -->
+<!-- ======================================= -->
+
+<style>
+.final-section {
+  margin: 55px 0;
+  scroll-margin-top: 90px;
+}
+
+.final-section h2 {
+  color: #e9bd62;
+  border-bottom: 1px solid #30445e;
+  padding-bottom: 12px;
+}
+
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(190px,1fr));
+  gap: 12px;
+}
+
+.team-card {
+  background: #101e32;
+  border: 1px solid #30445e;
+  border-radius: 10px;
+  padding: 16px;
+  transition: border-color 0.2s;
+}
+
+.team-card:hover {
+  border-color: #e9bd62;
+}
+
+.team-card h3 {
+  color: #e9bd62;
+  margin-top: 0;
+  font-size: 16px;
+}
+
+.team-card p {
+  color: #a5b5ca;
+  font-size: 13px;
+}
+
+.final-card {
+  background: #101e32;
+  border: 1px solid #30445e;
+  border-radius: 12px;
+  padding: 22px;
+  margin: 15px 0;
+}
+
+.final-card h3 {
+  color: #e9bd62;
+}
+
+.quiz-question {
+  background: #172941;
+  border-radius: 9px;
+  padding: 17px;
+  margin: 15px 0;
+}
+
+.quiz-question button {
+  display: block;
+  width: 100%;
+  text-align: left;
+  margin: 8px 0;
+  padding: 12px;
+  color: white;
+  background: #203753;
+  border: 1px solid #405978;
+  border-radius: 7px;
+}
+
+.quiz-question button:hover {
+  background: #31547a;
+}
+
+.quiz-question button:disabled {
+  cursor: default;
+  opacity: 0.85;
+}
+
+.quiz-result {
+  color: #e9bd62;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+.quiz-score {
+  background: #172941;
+  border: 1px solid #e9bd62;
+  border-radius: 10px;
+  padding: 20px;
+  text-align: center;
+  font-size: 19px;
+}
+
+.team-search {
+  width: 100%;
+  background: #0e1b2d;
+  border: 1px solid #30445e;
+  color: white;
+  padding: 13px;
+  border-radius: 8px;
+  margin: 12px 0;
+}
+
+.final-button {
+  background: #2778c7;
+  border: none;
+  border-radius: 8px;
+  padding: 12px 18px;
+  color: white;
+  font-weight: bold;
+}
+
+.final-button:hover {
+  background: #398cdd;
+}
+</style>
+
+<!-- ALL 32 TEAMS -->
+
+<section class="final-section" id="teams">
+
+<h2>🏒 ALL 32 NHL FRANCHISES</h2>
+
+<div class="final-card">
+<p>
+The modern NHL has 32 franchises divided into
+the Eastern and Western Conferences.
+Explore every team below.
+</p>
+</div>
+
+<input
+  id="teamSearch"
+  class="team-search"
+  type="search"
+  placeholder="Search NHL teams..."
+  aria-label="Search NHL teams"
+>
+
+<div id="teamGrid" class="team-grid"></div>
+
+<p id="teamCount" class="archive-note"></p>
+
+</section>
+
+<!-- EXPANSION HISTORY -->
+
+<section class="final-section" id="expansion">
+
+<h2>🌎 HOW THE NHL EXPANDED</h2>
+
+<div class="final-card">
+<h3>1917 — The NHL Begins</h3>
+<p>
+The NHL begins with four founding clubs:
+Montreal Canadiens, Montreal Wanderers,
+Ottawa Senators and Quebec Bulldogs.
+</p>
+</div>
+
+<div class="final-card">
+<h3>1924 — Boston Joins</h3>
+<p>
+The Boston Bruins become the first
+American-based NHL franchise.
+</p>
+</div>
+
+<div class="final-card">
+<h3>1926 — Major American Expansion</h3>
+<p>
+The New York Rangers, Chicago Black Hawks
+and Detroit Cougars join the league.
+</p>
+</div>
+
+<div class="final-card">
+<h3>1967 — The Historic Expansion</h3>
+<p>
+The NHL doubles from six teams to twelve.
+New franchises include Philadelphia,
+Pittsburgh, Los Angeles, Minnesota,
+Oakland and St. Louis.
+</p>
+</div>
+
+<div class="final-card">
+<h3>1970–1979 — A Bigger League</h3>
+<p>
+Buffalo, Vancouver, Atlanta, Washington,
+Kansas City and Colorado's original
+Rockies franchise enter during this era.
+</p>
+</div>
+
+<div class="final-card">
+<h3>1991–1993 — The Southern Expansion</h3>
+<p>
+San Jose, Ottawa, Tampa Bay and Florida
+help transform the league's geographic reach.
+</p>
+</div>
+
+<div class="final-card">
+<h3>1998–2000 — More New Franchises</h3>
+<p>
+Nashville, Atlanta and Minnesota enter
+the NHL during this expansion period.
+</p>
+</div>
+
+<div class="final-card">
+<h3>2017 — Vegas Golden Knights</h3>
+<p>
+Vegas becomes the league's 31st team
+and reaches the Stanley Cup Final
+in its inaugural season.
+</p>
+</div>
+
+<div class="final-card">
+<h3>2021 — Seattle Kraken</h3>
+<p>
+Seattle joins the NHL as the 32nd franchise.
+The league enters its current 32-team era.
+</p>
+</div>
+
+</section>
+
+<!-- NHL RECORDS -->
+
+<section class="final-section" id="records">
+
+<h2>📊 THE GREATEST NHL RECORDS</h2>
+
+<div class="final-card">
+<h3>🏆 Most Stanley Cup Championships</h3>
+<p>
+Montreal Canadiens — 24 NHL-era championships.
+</p>
+</div>
+
+<div class="final-card">
+<h3>🥇 Most Career Points</h3>
+<p>
+Wayne Gretzky — 2,857 regular-season points.
+</p>
+</div>
+
+<div class="final-card">
+<h3>🥅 Most Career Goals</h3>
+<p>
+Alexander Ovechkin — 900 regular-season goals,
+reaching the milestone in 2025.
+</p>
+</div>
+
+<div class="final-card">
+<h3>🎯 Most Career Assists</h3>
+<p>
+Wayne Gretzky — 1,963 regular-season assists.
+</p>
+</div>
+
+<div class="final-card">
+<h3>🔥 Most Goals in One Season</h3>
+<p>
+Wayne Gretzky — 92 goals during the
+1981–82 regular season.
+</p>
+</div>
+
+<div class="final-card">
+<h3>⚡ Most Points in One Season</h3>
+<p>
+Wayne Gretzky — 215 points during
+the 1985–86 regular season.
+</p>
+</div>
+
+<div class="final-card">
+<h3>🧤 Most Career Wins by a Goaltender</h3>
+<p>
+Martin Brodeur — 691 regular-season wins.
+</p>
+</div>
+
+<div class="final-card">
+<h3>🏒 Most Consecutive Stanley Cups</h3>
+<p>
+Montreal Canadiens — five consecutive
+championships from 1956 through 1960.
+</p>
+</div>
+
+<p class="archive-note">
+Regular-season records are distinguished from
+playoff records. Records should be checked against
+the official NHL statistics database before publication.
+</p>
+
+</section>
+
+<!-- NHL AWARDS -->
+
+<section class="final-section" id="awards">
+
+<h2>🏅 THE NHL'S MOST FAMOUS AWARDS</h2>
+
+<div class="final-card">
+<h3>Hart Memorial Trophy</h3>
+<p>
+Awarded to the player judged most valuable
+to his team during the regular season.
+</p>
+</div>
+
+<div class="final-card">
+<h3>Art Ross Trophy</h3>
+<p>
+Awarded to the player who leads the league
+in regular-season points.
+</p>
+</div>
+
+<div class="final-card">
+<h3>Rocket Richard Trophy</h3>
+<p>
+Awarded to the NHL's regular-season
+leading goal scorer.
+</p>
+</div>
+
+<div class="final-card">
+<h3>Vezina Trophy</h3>
+<p>
+Awarded to the NHL's top goaltender,
+as voted by the league's general managers.
+</p>
+</div>
+
+<div class="final-card">
+<h3>Norris Trophy</h3>
+<p>
+Awarded to the defenseman who demonstrates
+the greatest all-around ability.
+</p>
+</div>
+
+<div class="final-card">
+<h3>Calder Trophy</h3>
+<p>
+Awarded to the NHL's top rookie.
+</p>
+</div>
+
+<div class="final-card">
+<h3>Conn Smythe Trophy</h3>
+<p>
+Awarded to the most valuable player
+during the Stanley Cup playoffs.
+</p>
+</div>
+
+<div class="final-card">
+<h3>Selke Trophy</h3>
+<p>
+Awarded to the forward who demonstrates
+the greatest defensive ability.
+</p>
+</div>
+
+<div class="final-card">
+<h3>Lady Byng Trophy</h3>
+<p>
+Recognizes sportsmanship and gentlemanly
+conduct combined with a high standard
+of playing ability.
+</p>
+</div>
+
+<div class="final-card">
+<h3>Jack Adams Award</h3>
+<p>
+Awarded to the NHL's coach of the year.
+</p>
+</div>
+
+</section>
+
+<!-- HOCKEY TRIVIA -->
+
+<section class="final-section" id="trivia">
+
+<h2>🧠 THE ULTIMATE NHL TRIVIA CHALLENGE</h2>
+
+<div class="final-card">
+<p>
+Think you know hockey history?
+Test yourself with these ten questions.
+</p>
+
+<div class="quiz-score">
+🏆 Score: <span id="quizScore">0</span> / 10
+</div>
+
+<div id="quizContainer"></div>
+
+<p id="quizCompletion" class="quiz-result"></p>
+
+<button class="final-button" id="restartQuiz">
+RESTART QUIZ
+</button>
+</div>
+
+</section>
+
+<!-- FINAL NHL LEGACY -->
+
+<section class="final-section" id="legacy">
+
+<h2>🏆 THE LEGACY OF THE NHL</h2>
+
+<div class="final-card">
+<h3>Over a Century of Greatness</h3>
+
+<p>
+The NHL began as a small Canadian league
+in 1917 and grew into an international
+professional hockey competition.
+</p>
+
+<p>
+Generations of players have transformed
+the sport. From Maurice Richard and
+Gordie Howe to Wayne Gretzky, Mario Lemieux,
+Sidney Crosby and Connor McDavid,
+every era has produced unforgettable talent.
+</p>
+
+<p>
+The Stanley Cup remains the ultimate
+prize for NHL teams, representing the
+culmination of an entire season of competition.
+</p>
+
+<h3>ONE LEAGUE. ONE TROPHY. COUNTLESS LEGENDS.</h3>
+</div>
+
+</section>
+
+<!-- TEAM DATABASE AND QUIZ LOGIC -->
+
+<script>
+(function () {
+"use strict";
+
+// NHL TEAM DATABASE
+
+const teams = [
+["Anaheim Ducks","Pacific","1993"],
+["Boston Bruins","Atlantic","1924"],
+["Buffalo Sabres","Atlantic","1970"],
+["Calgary Flames","Pacific","1972"],
+["Carolina Hurricanes","Metropolitan","1972"],
+["Chicago Blackhawks","Central","1926"],
+["Colorado Avalanche","Central","1972"],
+["Columbus Blue Jackets","Metropolitan","2000"],
+["Dallas Stars","Central","1967"],
+["Detroit Red Wings","Atlantic","1926"],
+["Edmonton Oilers","Pacific","1972"],
+["Florida Panthers","Atlantic","1993"],
+["Los Angeles Kings","Pacific","1967"],
+["Minnesota Wild","Central","2000"],
+["Montreal Canadiens","Atlantic","1909"],
+["Nashville Predators","Central","1998"],
+["New Jersey Devils","Metropolitan","1974"],
+["New York Islanders","Metropolitan","1972"],
+["New York Rangers","Metropolitan","1926"],
+["Ottawa Senators","Atlantic","1992"],
+["Philadelphia Flyers","Metropolitan","1967"],
+["Pittsburgh Penguins","Metropolitan","1967"],
+["San Jose Sharks","Pacific","1991"],
+["Seattle Kraken","Pacific","2021"],
+["St. Louis Blues","Central","1967"],
+["Tampa Bay Lightning","Atlantic","1992"],
+["Toronto Maple Leafs","Atlantic","1917"],
+["Utah Mammoth","Central","2024"],
+["Vancouver Canucks","Pacific","1970"],
+["Vegas Golden Knights","Pacific","2017"],
+["Washington Capitals","Metropolitan","1974"],
+["Winnipeg Jets","Central","1999"]
+];
+
+const teamGrid = document.getElementById("teamGrid");
+const teamSearch = document.getElementById("teamSearch");
+const teamCount = document.getElementById("teamCount");
+
+if (teamGrid && teamSearch && teamCount) {
+
+  function renderTeams() {
+    const query = teamSearch.value.toLowerCase().trim();
+
+    const filtered = teams.filter(team =>
+      team[0].toLowerCase().includes(query) ||
+      team[1].toLowerCase().includes(query) ||
+      team[2].includes(query)
+    );
+
+    teamGrid.innerHTML = filtered.map(team => `
+      <article class="team-card">
+        <h3>${team[0]}</h3>
+        <p>Division: ${team[1]}</p>
+        <p>Franchise origin: ${team[2]}</p>
+      </article>
+    `).join("");
+
+    teamCount.textContent =
+      "Showing " + filtered.length + " of " +
+      teams.length + " franchises.";
+  }
+
+  teamSearch.addEventListener("input", renderTeams);
+  renderTeams();
+}
+
+// TRIVIA DATABASE
+
+const questions = [
+{
+q:"When was the NHL founded?",
+a:["1909","1917","1926","1942"],
+correct:1,
+info:"The NHL was founded on November 26, 1917."
+},
+{
+q:"Which team has won the most NHL-era Stanley Cups?",
+a:["Toronto","Detroit","Montreal","Boston"],
+correct:2,
+info:"The Montreal Canadiens have won 24 NHL-era championships."
+},
+{
+q:"Who is known as The Great One?",
+a:["Mario Lemieux","Gordie Howe","Wayne Gretzky","Bobby Orr"],
+correct:2,
+info:"Wayne Gretzky is known worldwide as The Great One."
+},
+{
+q:"Which team won four straight Cups from 1980 to 1983?",
+a:["Edmonton","Islanders","Montreal","Boston"],
+correct:1,
+info:"The New York Islanders won four consecutive championships."
+},
+{
+q:"Which player scored 92 goals in 1981-82?",
+a:["Mario Lemieux","Wayne Gretzky","Mike Bossy","Brett Hull"],
+correct:1,
+info:"Gretzky scored 92 regular-season goals in 1981-82."
+},
+{
+q:"Which team won its first Stanley Cup in 2019?",
+a:["Vegas","Florida","St. Louis","San Jose"],
+correct:2,
+info:"The St. Louis Blues won their first championship in 2019."
+},
+{
+q:"Who is nicknamed Mr. Hockey?",
+a:["Gordie Howe","Bobby Orr","Jean Beliveau","Maurice Richard"],
+correct:0,
+info:"Gordie Howe is known as Mr. Hockey."
+},
+{
+q:"Which team joined the NHL in 2021?",
+a:["Vegas","Seattle","Utah","Columbus"],
+correct:1,
+info:"The Seattle Kraken joined the NHL for the 2021-22 season."
+},
+{
+q:"Who scored the 2010 Olympic golden goal for Canada?",
+a:["Joe Sakic","Sidney Crosby","Jarome Iginla","Jonathan Toews"],
+correct:1,
+info:"Sidney Crosby scored the overtime winner in Vancouver."
+},
+{
+q:"What is the name of the NHL championship trophy?",
+a:["Hart Trophy","Vezina Trophy","Stanley Cup","Conn Smythe Trophy"],
+correct:2,
+info:"The Stanley Cup is awarded to the NHL playoff champion."
+}
+];
+
+const quizContainer = document.getElementById("quizContainer");
+const quizScore = document.getElementById("quizScore");
+const quizCompletion = document.getElementById("quizCompletion");
+const restartQuiz = document.getElementById("restartQuiz");
+
+let score = 0;
+let answered = 0;
+
+function renderQuiz() {
+
+  if (!quizContainer) return;
+
+  quizContainer.innerHTML = "";
+
+  questions.forEach((question,index) => {
+
+    const card = document.createElement("div");
+    card.className = "quiz-question";
+
+    const title = document.createElement("h3");
+    title.textContent =
+      (index + 1) + ". " + question.q;
+
+    card.appendChild(title);
+
+    const result = document.createElement("p");
+    result.className = "quiz-result";
+
+    question.a.forEach((answer,answerIndex) => {
+
+      const button = document.createElement("button");
+      button.type = "button";
+      button.textContent = answer;
+
+      button.addEventListener("click", () => {
+
+        if (button.disabled) return;
+
+        const buttons = card.querySelectorAll("button");
+
+        buttons.forEach((item,buttonIndex) => {
+          item.disabled = true;
+
+          if (buttonIndex === question.correct) {
+            item.style.borderColor = "#e9bd62";
+            item.style.background = "#28533e";
+          }
+        });
+
+        if (answerIndex === question.correct) {
+          score++;
+          result.textContent = "Correct! " + question.info;
+        } else {
+          result.textContent =
+            "Not quite. " + question.info;
+        }
+
+        answered++;
+        quizScore.textContent = score;
+
+        if (answered === questions.length) {
+          quizCompletion.textContent =
+            "Quiz complete! You scored " +
+            score + " out of " +
+            questions.length + ". " +
+            (score >= 8 ? "Hockey expert! 🏆" :
+             score >= 5 ? "Nice work! 🏒" :
+             "Time to explore the museum again!");
+        }
+      });
+
+      card.appendChild(button);
+    });
+
+    card.appendChild(result);
+    quizContainer.appendChild(card);
+  });
+}
+
+function resetQuiz() {
+  score = 0;
+  answered = 0;
+
+  if (quizScore) quizScore.textContent = "0";
+  if (quizCompletion) quizCompletion.textContent = "";
+
+  renderQuiz();
+}
+
+if (restartQuiz) {
+  restartQuiz.addEventListener("click", resetQuiz);
+}
+
+renderQuiz();
+
+})();
+</script>
+
+
